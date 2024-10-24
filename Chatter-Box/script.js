@@ -35,3 +35,24 @@ else if(localStorage.getItem("theme") == "dark"){
 else{
     localStorage.setItem("theme", "light");
 }
+// Function to send a message
+function sendMessage() {
+    const messageInput = document.getElementById('message-input').value;
+    if (messageInput.trim() !== "") {
+        const chatBox = document.querySelector('.messages');
+        const newMessage = document.createElement('div');
+        newMessage.classList.add('message', 'sent');
+        newMessage.innerHTML = `<p>${messageInput}</p>`;
+        chatBox.appendChild(newMessage);
+        chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the bottom
+        document.getElementById('message-input').value = ''; // Clear input field
+    } else {
+        alert("Please enter a message");
+    }
+}
+
+// Function to start a group chat
+function startGroupChat() {
+    alert("Group chat feature coming soon!");
+    // This can be linked to backend functionality to start group chat
+}
